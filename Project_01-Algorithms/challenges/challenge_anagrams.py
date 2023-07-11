@@ -3,7 +3,9 @@ def quicksort(list):
         return list
 
     else:
-        pivot = list.pop(0)
+        # pivot = list.pop(0) # Refactor due to higher memory consumption O(n)
+        pivot = list.pop(len(list) - 1)
+        # Popping the last element is more memory efficient - O(1)
         higher = []
         lower = []
         for item in list:
